@@ -155,3 +155,9 @@ const determineDifficulty = (latestSets: any[], suggestedSets: any[]): "easier" 
   return "same"
 }
 
+// Add this export to your existing workoutService file
+export const getActiveWorkout = async () => {
+  const workouts = await getAllWorkouts();
+  return workouts.find(workout => workout.isActive) || null;
+};
+
